@@ -9,7 +9,7 @@ public class Siakad22 {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         String nama, nim;
-        char kelas;
+        String kelas;
         byte absen;
         double nilaiKuis, nilaiTugas, nilaiUjian, nilaiAkhir;
         System.out.print("Masukkan nama: ");
@@ -17,7 +17,7 @@ public class Siakad22 {
         System.out.print("Masukkan NIM: ");
         nim = sc.nextLine();
         System.out.print("Masukkan Kelas: ");
-        kelas = sc.nextLine().charAt(0);
+        kelas = sc.nextLine();
         System.out.print("Masukkan nomer absen: ");
         absen = sc.nextByte();
 
