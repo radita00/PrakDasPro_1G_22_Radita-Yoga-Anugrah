@@ -30,7 +30,7 @@ public class Siakad22 {
 
         nilaiAkhir = (nilaiKuis + nilaiTugas + nilaiUjian) / 3;
 
-        System.out.println("Mahasiswa dengan nama " + nama + "(NIM " + nim + ")" + " Kelas " + kelas + " Nomor absen: " + absen);
+        System.out.println("Mahasiswa dengan nama " + nama + "(NIM " + nim + ")" + " Kelas " + kelas + " Nomor Absen: " + absen);
         System.out.println("Nilai Akhir: " + nilaiAkhir);
     }
 }
