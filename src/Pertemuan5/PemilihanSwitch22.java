@@ -29,6 +29,8 @@ public class PemilihanSwitch22 {
             case '/':
                 hasil = angka1 / angka2;
                 break;
+            default:
+            System.out.println("Operator tidak sesuai");
         }
         System.out.println(angka1 + " " + operator + " " + angka2 + " = " + hasil);
     }
