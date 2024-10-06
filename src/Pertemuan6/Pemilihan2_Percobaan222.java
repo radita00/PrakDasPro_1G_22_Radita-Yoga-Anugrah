@@ -8,7 +8,7 @@ public class Pemilihan2_Percobaan222 {
 
         int pilihan_menu;
         double diskon, harga, total_bayar;
-        String member;
+        String member, metode;
 
         System.out.println("-------------------------");
         System.out.println("===== MENU KAFE JTI =====");
@@ -40,8 +40,18 @@ public class Pemilihan2_Percobaan222 {
                 System.out.println("Masukan pilihan menu dengan benar");
                 return;
             }
-            total_bayar = harga - (harga * diskon);
-            System.out.println("Total bayar setelah diskon = " + total_bayar);
+            System.out.print("Apakah metode pembayaran qris (y/n)? =");
+            metode = input22.nextLine();
+            if (metode.equalsIgnoreCase("y")) {
+                total_bayar = harga - (harga * diskon) - 1000;
+                System.out.println("Total bayar setelah diskon = " + total_bayar);
+            } else if (metode.equalsIgnoreCase("n")) {
+                total_bayar = harga - (harga * diskon);
+                System.out.println("Total bayar setelah diskon = " + total_bayar);
+            } else {
+                System.out.println("Masukan metode yang benar");
+                return;
+            }
         }
         else if (member.equalsIgnoreCase("n")) {
             if (pilihan_menu == 1) {
@@ -57,7 +67,18 @@ public class Pemilihan2_Percobaan222 {
                 System.out.println("Masukan pilihan menu dengan benar");
                 return;
             }
-            System.out.println("Total bayar = " + harga);
+            System.out.print("Apakah metode pembayaran qris (y/n)? =");
+            metode = input22.nextLine();
+            if (metode.equalsIgnoreCase("y")) {
+                total_bayar = harga - 1000;
+                System.out.println("Total bayar setelah diskon = " + total_bayar);
+            } else if (metode.equalsIgnoreCase("n")) {
+                total_bayar = harga;
+                System.out.println("Total bayar setelah diskon = " + total_bayar);
+            } else {
+                System.out.println("Masukan metode yang benar");
+                return;
+            }
         } else {
             System.out.println("member tidak valid");
         }
