@@ -18,7 +18,7 @@ public class KafeMakanan22 {
         System.out.print("Masukan jumlah pembelian mie rebus: ");
         jmlMieRebus = sc.nextInt();
         System.out.print("Masukan harga mie rebus: Rp. ");
-        hrgMieRebus = sc.nextInt();
+        hrgMieRebus = sc.nextDouble();
         System.out.println("-----------Fuyunghai-----------");
         System.out.print("Masukan jumlah penbelian fuyunghai: ");
         jmlFuyunghai = sc.nextInt();
@@ -26,7 +26,6 @@ public class KafeMakanan22 {
         hrgFuyunghai = sc.nextDouble();
 
         double totalHarga = (jmlNasgor * hrgNasgor) + (jmlMieRebus * hrgMieRebus) + (jmlFuyunghai * hrgFuyunghai);
-
         if (totalHarga > 500000) {
             double nominalBayar = totalHarga - (totalHarga * 0.1);
             System.out.println("\nNominal bayar : Rp " + nominalBayar);
