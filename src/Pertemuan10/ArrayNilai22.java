@@ -8,12 +8,17 @@ public class ArrayNilai22 {
 
         int nilaiAkhir [] = new int[10];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < nilaiAkhir.length; i++) {
             System.out.print("Masukan niali akhir ke-"+i+" : ");
             nilaiAkhir[i] = sc.nextInt();
         } 
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Nilai akhir ke-"+i+" adalah "+nilaiAkhir[i]);
+        for (int i = 0; i <  nilaiAkhir.length; i++) {
+           if (nilaiAkhir[i]>70) {
+                System.out.println("Nilai mahasiswa ke-"+i+" lulus!");
+           } else{
+                System.out.println("Nilai mahasiswa ke-"+i+" tidak lulus!");
+            }
+        
         }sc.close();
     }
 }
