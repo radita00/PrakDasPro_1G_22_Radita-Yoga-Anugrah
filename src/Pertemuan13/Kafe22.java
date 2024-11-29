@@ -20,18 +20,24 @@ public class Kafe22 {
         System.out.println("===========================");
         System.out.println("Silahkan pilih menu yang anda inginkan.");
 
-        // if (kodePromo.equalsIgnoreCase("diskon50")) {
-        //     System.out.println("Selamat anda mendapat diskon sebesar 50%");
-        // }else if (kodePromo.equalsIgnoreCase("diskon30")) {
-        //     System.out.println("Selamat anda mendapat diskon sebesar 30%");
-        // }else {
-        //     System.out.println("Kode yang anda masukan invalid");
-        // }
     }
-    public static int hitungTotalHarga22(int pilihMenu, int banyakItem){
+    public static double hitungTotalHarga22(int pilihMenu, int banyakItem, String kodePromo){
         int [] hargaItem = {15000,20000,22000,12000,10000,18000};
+        
 
-        int hargaTotal = hargaItem[pilihMenu-1] * banyakItem;
+        double hargaTotal = hargaItem[pilihMenu-1] * banyakItem;
+
+        if (kodePromo.equalsIgnoreCase("diskon50")) {
+            System.out.print("Selamat anda mendapatkan diskon sebesar 50%");
+            System.out.print("\nHarga semula: Rp" + hargaTotal);
+            hargaTotal *= 0.5;
+        }else if (kodePromo.equalsIgnoreCase("diskon30")) {
+            System.out.print("Selamat anda mendapatkan diskon sebesar 30%");
+            System.out.print("\nHarga semula: Rp" + hargaTotal);
+            hargaTotal *= 0.3;
+        }else {
+            System.out.print("Kode promo yang anda masukkan invalid");
+        }
         return hargaTotal;
     }
     public static void main(String[] args) {
@@ -44,9 +50,13 @@ public class Kafe22 {
         System.out.print("Masukkan jumlah item yang ingin anda pesan: ");
         int banyakItem = sc.nextInt();
 
-        int totalHarga = hitungTotalHarga22(pilihMenu, banyakItem);
-
-        System.out.println("Total harga untuk pesanan anda: Rp" + totalHarga);
+        sc.nextLine();
+        System.out.print("Masukkan kode promo: ");
+        String kodePromo = sc.nextLine();
+        
+        double totalHarga = hitungTotalHarga22(pilihMenu, banyakItem, kodePromo);
+        
+        System.out.println("\nTotal harga untuk pesanan anda: Rp" + totalHarga);
 
     }
 }
