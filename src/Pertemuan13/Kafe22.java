@@ -1,7 +1,7 @@
 package Pertemuan13;
 
 public class Kafe22 {
-    public static void Menu (String namaPelanggan, boolean isMemeber){
+    public static void Menu (String namaPelanggan, boolean isMemeber, String kodePromo){
         System.out.println("Selamat datang, " + namaPelanggan + "!");
 
         if (isMemeber) {
@@ -17,8 +17,20 @@ public class Kafe22 {
         System.out.println("6. Mie Goreng - Rp 18,000");
         System.out.println("===========================");
         System.out.println("Silahkan pilih menu yang anda inginkan.");
+
+        if (kodePromo.equalsIgnoreCase("diskon50")) {
+            System.out.println("Selamat anda mendapat diskon sebesar 50%");
+        }else if (kodePromo.equalsIgnoreCase("diskon30")) {
+            System.out.println("Selamat anda mendapat diskon sebesar 30%");
+        }else {
+            System.out.println("Kode yang anda masukan invalid");
+        }
     }
     public static void main(String[] args) {
-        Menu("Andi", true);
+        Menu("Andi", true, "diskon50");
+        System.out.println();
+        Menu("Andi", true, "diskon30");
+        System.out.println();
+        Menu("Andi", true, "");
     }
 }
