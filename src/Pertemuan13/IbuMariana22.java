@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class IbuMariana22 {
     static Scanner sc = new Scanner(System.in);
-    static int [][] input (String [] menu){
-        int [][] terjual = new int[5][7];
+    static int [][] input (String [] menu, int jmlMenu, int jmlHari){
+        int [][] terjual = new int[jmlMenu][jmlHari];
         System.out.println("=== INPUT JUMLAH PENJUALAN ===");
 
         for (int i = 0; i < menu.length; i++) {
@@ -18,10 +18,10 @@ public class IbuMariana22 {
         System.out.println();
         return terjual;
     }
-    static void tampilan (String [] menu, int [][]jmlTerjual){
+    static void tampilan (String [] menu, int [][]jmlTerjual, int jmlHari){
         System.out.println("=== DATA PENJUALAN ===");
         System.out.print("\t\t");
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < jmlHari; i++) {
             System.out.print("Hari ke-" + (i+1) + "\t");
         }
 
@@ -67,10 +67,20 @@ public class IbuMariana22 {
     }
 
     public static void main(String[] args) {
-        String [] menu = {"Kopi\t", "Teh\t", "Es Degan", "Roti Bakar", "Gorengan"};
-        int [][] jmlTerjual = input(menu);
+        System.out.print("Masukkan jumlah menu: ");
+        int jmlMenu = sc.nextInt();
+        sc.nextLine();
+        String [] menu = new String[jmlMenu];
+        for (int i = 0; i < menu.length; i++) {
+            System.out.print("Masukkan nama menu ke-" + (i+1) + ": ");
+            menu[i]= sc.nextLine();
+        }
 
-        tampilan(menu, jmlTerjual);
+        System.out.print("Masukkan jumlah hari: ");
+        int jmlHari = sc.nextInt();
+
+        int [][] jmlTerjual = input(menu, jmlMenu, jmlHari);
+        tampilan(menu, jmlTerjual, jmlHari);
 
         penjualanTertinggi(jmlTerjual, menu);
 
