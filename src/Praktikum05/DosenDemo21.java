@@ -37,19 +37,26 @@ public class DosenDemo21 {
                         Dosen21 dsn = new Dosen21(jenisKelamin, nama, jk, usia);
                         list.tambah(dsn);
                     }
+                    break;
                 case 2:
                     System.out.println("Data seluruh dosen");
                     list.tampil();
-
+                    break;
                 case 3:
                     System.out.println("Urutan dosen dari yang termuda");
                     list.bubbleSort();
                     list.tampil();
+                    break;
                 case 4:
                     System.out.println("Urutan dosen dari yang tertua");
                     list.selectionSort();
                     list.tampil();
+                    break;
+                case 5:
+                    System.out.println("Selesai");
+                    return;
                 default:
+                    System.out.println("Pilihan tidak valid");
                     break;
             }
         }
