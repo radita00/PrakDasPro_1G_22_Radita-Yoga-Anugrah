@@ -4,13 +4,9 @@ import java.util.Scanner;
 public class MahasiswaDemo21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah mahasiswa: ");
-        int jumlah = sc.nextInt();
-        sc.nextLine();
+        MahasiswaPrestasi21 list = new MahasiswaPrestasi21();
 
-        MahasiswaPrestasi21 list = new MahasiswaPrestasi21(jumlah);
-
-        for (int i = 0; i < jumlah; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("Data mahasiswa ke-" + (i+1));
             System.out.print("NIM\t: ");
             String nim = sc.nextLine();
