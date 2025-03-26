@@ -14,7 +14,8 @@ public class DosenDemo21 {
             System.out.println("2. Tampilkan data dosen");
             System.out.println("3. Sorting ASC");
             System.out.println("4. Sorting DSC");
-            System.out.println("5. Keluar");
+            System.out.println("5. Cari data dosen berdasarkan nama");
+            System.out.println("6. Cari data dosen berdasarkan usia");
             System.out.print("Pilih menu: ");
             int pilihan = sc.nextInt();
             sc.nextLine();
@@ -53,8 +54,24 @@ public class DosenDemo21 {
                     list.tampil();
                     break;
                 case 5:
-                    System.out.println("Selesai");
-                    return;
+                    System.out.println("--------------------------------------");
+                    System.out.println("Pencarian data");
+                    System.out.println("--------------------------------------");
+                    System.out.print("Masukkan nama dosen: ");
+                    String cari = sc.nextLine();
+                    int [] hasil = list.pencarianDataSequential21(cari);
+                    list.tampilPosisi(cari, hasil);
+                    list.tampilDataSearch(cari, hasil);
+                    break;
+                case 6:
+                    System.out.println("--------------------------------------");
+                    System.out.println("Pencarian data");
+                    System.out.println("--------------------------------------");
+                    System.out.print("Masukkan umur dosen: ");
+                    int key = sc.nextInt();
+                    int []hasilusia = list.pencarianDataBinary21(key, 0, list.idx-1);
+                    list.tampilPosisiUsia(key, hasilusia);
+                    list.tampilDataSearchusia(key, hasilusia);
                 default:
                     System.out.println("Pilihan tidak valid");
                     break;
