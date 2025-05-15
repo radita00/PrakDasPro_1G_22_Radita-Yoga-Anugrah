@@ -1,21 +1,29 @@
 package AlsdPertemuan12;
-
+import java.util.Scanner;
 public class SLLMain21 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         SingleLinkedList21 sll = new SingleLinkedList21();
 
-        Mahasiswa21 mhs1 = new Mahasiswa21("2211001", "Alvaro", "1A", 3.8);
-        Mahasiswa21 mhs2 = new Mahasiswa21("2211002", "Budi", "2B", 3.6);
-        Mahasiswa21 mhs3 = new Mahasiswa21("2211003", "Citra", "3C", 3.9);
-        Mahasiswa21 mhs4 = new Mahasiswa21("2211004", "Dirga", "4D", 3.7);
+        System.out.println("== Linked List ==");
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int n = sc.nextInt();
+        sc.nextLine();
 
-        sll.print();
-        sll.addFirst(mhs4);
-        sll.print();
-        sll.addLast(mhs1);
-        sll.print();
-        sll.insertAfter("Dirga", mhs3);
-        sll.InsertAt(2, mhs2);
+        for (int i = 0; i < n; i++) {
+            System.out.println("Masukkan data mahasiswa ke-" + (i+1)+": ");
+            System.out.print("NIM: ");
+            String nim = sc.nextLine();
+            System.out.print("Nama: ");
+            String nama = sc.nextLine();
+            System.out.print("Kelas: ");
+            String kelas = sc.nextLine();
+            System.out.print("IPK: ");
+            double ipk = Double.parseDouble(sc.nextLine());
+
+            Mahasiswa21 mhs = new Mahasiswa21(nim, nama, kelas, ipk);
+            sll.addLast(mhs);
+        }
         sll.print();
     }
 }
